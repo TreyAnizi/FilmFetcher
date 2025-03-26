@@ -6,6 +6,11 @@ export const postMovie = async (req, res) => {
   res.status(200).json({ movies: newMovie });
 };
 
+export const getMovie = (req, res) => {
+  const allMovies = moviesModel.find({});
+  res.status(200).json({ movies: allMovies });
+};
+
 export const updateMovie = (req, res) => {
   const newUpdatedMovie = moviesModel.findByIdAndUpdate(
     req.params.Id,
